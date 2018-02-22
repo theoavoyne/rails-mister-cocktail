@@ -1,0 +1,7 @@
+<ul>
+  <% counter = 1 %>
+  <% @ingredients.each do |ingredient| %>
+    <li><%= counter %>: <%= ingredient.name %></li>
+    <% counter += 1 %>
+  <% end %>
+</ul>
