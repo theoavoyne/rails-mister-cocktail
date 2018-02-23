@@ -3,7 +3,7 @@
     <% @cocktails.each do |cocktail| %>
       <div class="card">
         <%= link_to "", cocktail_path(cocktail), { :class=>"cover-link" } %>
-        <div class="card-image" style="background-image:url(<%= cocktail.imageurl %>);"></div>
+        <div class="card-image" style="background-image:url('<%= cocktail.photo %>');"></div>
         <div class="card-content">
           <h3><%= cocktail.name.capitalize %></h3>
           <p>Time: <%= cocktail.time %> min</p>
