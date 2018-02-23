@@ -3,6 +3,7 @@
     <% @cocktails.each do |cocktail| %>
       <div class="card">
         <%= link_to "", cocktail_path(cocktail), { :class=>"cover-link" } %>
+        <span class="edit-fav"><i class="fas fa-pencil-alt"></i></span>
         <div class="card-image" style="background-image:url('<%= cl_image_path cocktail.photo %>');"></div>
         <div class="card-content">
           <h3><%= cocktail.name.capitalize %></h3>
