@@ -1,3 +1,49 @@
 // Place all the styles related to the cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+h3 {
+  margin: 10px 0px;
+}
+
+.wrapper-flex {
+  display: flex;
+  margin: 50px 0;
+}
+
+.col-left {
+  flex: 0 0 65%;
+  margin-right: 5%;
+  h1 {
+    margin: 0;
+  }
+}
+
+.col-right {
+  flex: 0 0 30%;
+}
+
+.white-box {
+  margin: 20px 0;
+  background-color: white;
+  padding: 25px;
+  p, h2 {
+    margin: 0;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.form-wrapper {
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

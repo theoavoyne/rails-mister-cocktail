@@ -1,7 +1,23 @@
-<h1><%= @cocktail.name %></h1>
-<h2>Ingredients</h2>
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.description %> <strong><%= dose.ingredient.name %></strong></li>
-  <% end %>
-</ul>
+<div class="banner" style="background-image:url(<%= @cocktail.imageurl %>);"></div>
+
+<div class="container">
+  <div class="wrapper-flex">
+    <div class="col-left">
+      <div class="white-box">
+        <h1><%= @cocktail.name.capitalize %></h1>
+      </div>
+      <div class="white-box">
+        <h2>Description</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut, amet aliquam quod dolores! Perferendis atque modi deserunt facilis consequuntur, dolore hic rerum temporibus libero qui nulla maxime aliquam ducimus.</p>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="white-box">
+        <h2>Ingredients</h2>
+        <% @cocktail.doses.each do |dose| %>
+          <p><%= dose.description %> <strong><%= dose.ingredient.name %></strong></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

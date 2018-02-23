@@ -11,8 +11,21 @@
   </head>
 
   <body>
+    <div id="navbar">
+      <%= link_to cocktails_path do %>
+        <span class="website-title">MisterCocktails</span>
+      <% end %>
+      <%= link_to "New cocktail", new_cocktail_path, {class: 'main-btn'} %>
+    </div>
+    </div>
     <%= yield %>
 
+    <div class="footer">
+      <p>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+      </p>
+    </div>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag "application" %>
   </body>

@@ -1,0 +1,14 @@
+.main-btn {
+  background-color: $blue-site;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 3px;
+}
+
+.main-btn:hover {
+  opacity: 0.85;
+  text-decoration: none;
+  color:white;
+  transition: all 0.3s;
+}
