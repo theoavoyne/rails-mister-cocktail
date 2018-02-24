@@ -4,7 +4,7 @@
   <div class="wrapper-flex">
     <div class="col-left">
       <div class="white-box">
-        <h1><%= @cocktail.name.capitalize %></h1>
+        <h1 class="small"><%= @cocktail.name.capitalize %></h1>
       </div>
       <div class="white-box">
         <h2>Description</h2>
@@ -15,9 +15,19 @@
       <div class="white-box">
         <h2>Ingredients</h2>
         <% @cocktail.doses.each do |dose| %>
-          <p><%= dose.description %> <strong><%= dose.ingredient.name %></strong></p>
+          <p>• <%= dose.description %> <%= dose.ingredient.name %> (<%= link_to "delete", cocktail_dose_path(dose), url_options = {method: :delete} %>)</p>
         <% end %>
+        <%= simple_form_for [@cocktail, @dose], html: { class: 'form-inline' } do |f| %>
+          <%= f.input :description, label: false, placeholder: "Dose" %>
+          <%= f.input :ingredient, collection: Ingredient.all, label: false, prompt: "Ingredient"  %>
+          <%= button_tag(type: 'submit', class: "main-btn", id: "dose_submit") do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        <% end %>
+        <p id="adddose"><i class="fas fa-plus"></i> Add a dose</p>
       </div>
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag "new_dose" %>

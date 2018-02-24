@@ -6,6 +6,7 @@ class CocktailsController < ApplicationController
   end
 
   def show
+    @dose = Dose.new
   end
 
   def new
@@ -22,7 +23,7 @@ class CocktailsController < ApplicationController
   end
 
   def update
-    @cocktail = Cocktail.update!(cocktail_params)
+    @cocktail = Cocktail.update(cocktail_params)
 
     redirect_to cocktail_path(@cocktail)
   end

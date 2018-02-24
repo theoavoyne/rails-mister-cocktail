@@ -3,12 +3,21 @@
     <% @cocktails.each do |cocktail| %>
       <div class="card">
         <%= link_to "", cocktail_path(cocktail), { :class=>"cover-link" } %>
-        <span class="edit-fav"><i class="fas fa-pencil-alt"></i></span>
-        <div class="card-image" style="background-image:url('<%= cl_image_path cocktail.photo %>');"></div>
+        <% if cocktail.photo_url %>
+          <div class="card-image" style="background-image:url('<%= cl_image_path cocktail.photo %>');"></div>
+        <% else %>
+          <div class="card-image"></div>
+        <% end %>
         <div class="card-content">
           <h3><%= cocktail.name.capitalize %></h3>
           <p>Time: <%= cocktail.time %> min</p>
         </div>
+        <%= link_to edit_cocktail_path(cocktail), { :class=>"edit-fav" } do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to cocktail_path(cocktail), url_options = {method: :delete, :class=>"trash-fav"} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
       </div>
     <% end %>
   </div>

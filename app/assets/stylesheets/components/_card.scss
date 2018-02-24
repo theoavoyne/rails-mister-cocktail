@@ -11,9 +11,6 @@
   }
 }
 
-.card:hover {
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
 .card-image {
   height: 200px;
   width: 100%;
@@ -36,9 +33,10 @@
   bottom:0;
   left: 0;
   right: 0;
-  &:hover .edit-fav {
-    display: inline;
-  }
+}
+
+.card:hover {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .edit-fav {
@@ -46,7 +44,17 @@
   top: 10px;
   right: 10px;
   transition: all 0.5s;
-  display: none;
+  i {
+    color: white;
+    font-size: 20px;
+  }
+}
+
+.trash-fav {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  transition: all 0.5s;
   i {
     color: white;
     font-size: 20px;
