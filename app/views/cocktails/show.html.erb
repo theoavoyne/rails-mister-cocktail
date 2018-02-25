@@ -15,7 +15,7 @@
       <div class="white-box">
         <h2>Ingredients</h2>
         <% @cocktail.doses.each do |dose| %>
-          <p>• <%= dose.description %> <%= dose.ingredient.name %> (<%= link_to "delete", cocktail_dose_path(dose), url_options = {method: :delete} %>)</p>
+          <p>• <%= dose.description %> <%= dose.ingredient.name %> (<%= link_to "delete", cocktail_dose_path(@cocktail, dose), url_options = {method: :delete} %>)</p>
         <% end %>
         <%= simple_form_for [@cocktail, @dose], html: { class: 'form-inline' } do |f| %>
           <%= f.input :description, label: false, placeholder: "Dose" %>
@@ -29,5 +29,3 @@
     </div>
   </div>
 </div>
-
-<%= javascript_pack_tag "new_dose" %>
