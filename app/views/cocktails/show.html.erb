@@ -1,4 +1,4 @@
-<div class="banner" style="background-image:url(<%= @cocktail.photo %>);"></div>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4), rgba(0,0,0,0)), url(<%= asset_path 'bar-background.jpg' %>);"></div>
 
 <div class="container">
   <div class="wrapper-flex">
@@ -8,7 +8,13 @@
       </div>
       <div class="white-box">
         <h2>Description</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut, amet aliquam quod dolores! Perferendis atque modi deserunt facilis consequuntur, dolore hic rerum temporibus libero qui nulla maxime aliquam ducimus.</p>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id ut, amet aliquam quod dolores! Perferendis atque modi deserunt facilis consequuntur, dolore hic rerum temporibus libero qui nulla maxime aliquam ducimus.</p>
+        <%= link_to edit_cocktail_path(@cocktail) do %>
+          <span class="main-btn">Edit cocktail</span>
+        <% end %>
+        <%= link_to cocktail_path(@cocktail), url_options = {method: :delete, style: "margin-left: 10px;"} do %>
+          <span class="main-btn">Delete cocktail</span>
+        <% end %>
       </div>
     </div>
     <div class="col-right">

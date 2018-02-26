@@ -33,8 +33,13 @@ h3 {
   p, h2 {
     margin: 0;
   }
+  p.desc {
+    margin-bottom: 25px;
+  }
   h2 {
     margin-bottom: 20px;
+    font-size: 26px;
+    font-family: "Mukta Malar";
   }
 }
 
@@ -88,4 +93,10 @@ h1.small {
   color: $blue-site;
   opacity: 0.85;
   cursor: pointer;
+}
+
+.social {
+  color: $blue-site;
+  font-size: 22px;
+  text-decoration: none;
 }
